@@ -30,75 +30,85 @@ export default function DateInput({ label, onChange, verifyDate = true }) {
   const makeNumArray = (num) => Array.from(Array(num).keys());
 
   useEffect(() => {
+    let date = moment(
+      `${selectedYear}-${selectedMonth}-${selectedDay}`,
+      "YYYY-MM-DD"
+    );
+
     if (verifyDate) {
-      moment(
-        `${selectedYear}-${selectedMonth}-${selectedDay}`,
-        "YYYY-MM-DD"
-      ).isSameOrAfter(moment(), "day")
-        ? setIsDateWrong(false)
-        : setIsDateWrong(true);
+      if (date.isSameOrAfter(moment(), "day")) {
+        setIsDateWrong(false);
+      } else {
+        setIsDateWrong(true);
+      }
     }
+    onChange && onChange(date);
   }, [selectedDay, selectedMonth, selectedYear]);
 
   return (
     <View style={styles.container}>
-      <View style={pickerContainer}>
-        <Picker
-          style={styles.monthAndDayPicker}
-          itemStyle={styles.pickerText}
-          // dropdownIconColor={styles.pickerArrow}
-          selectedValue={selectedDay}
-          onValueChange={(itemValue, itemIndex) => setSelectedDay(itemValue)}
-        >
-          {makeNumArray(31).map((item, index) => (
-            <Picker.Item
-              key={index}
-              style={styles.pickerItem}
-              label={putZero(index + 1)}
-              value={parseInt(putZero(index + 1))}
-              mode={"dropdown"}
-            />
-          ))}
-        </Picker>
-      </View>
-      <Text style={styles.bar}>{`/`}</Text>
-      <View style={pickerContainer}>
-        <Picker
-          style={styles.monthAndDayPicker}
-          selectedValue={selectedMonth}
-          onValueChange={(itemValue, itemIndex) => setSelectedMonth(itemValue)}
-        >
-          {makeNumArray(12).map((item, index) => (
-            <Picker.Item
-              style={styles.pickerItem}
-              key={index}
-              label={putZero(index + 1)}
-              value={parseInt(putZero(index + 1))}
-              mode={Picker.MODE_DROPDOWN}
-            />
-          ))}
-        </Picker>
-      </View>
-      <Text style={styles.bar}>{`/`}</Text>
-      <View style={pickerContainer}>
-        <Picker
-          style={styles.picker}
-          selectedValue={selectedYear}
-          onValueChange={(itemValue, itemIndex) => setSelectedYear(itemValue)}
-        >
-          {makeNumArray(300).map((item, index) => {
-            let value = new Date().getFullYear() - 125 + index + 1;
-            return (
+      <Text style={styles.label}>{label}</Text>
+      <View style={styles.pickerRow}>
+        <View style={pickerContainer}>
+          <Picker
+            style={styles.monthAndDayPicker}
+            itemStyle={styles.pickerText}
+            // dropdownIconColor={styles.pickerArrow}
+            selectedValue={selectedDay}
+            onValueChange={(itemValue, itemIndex) => setSelectedDay(itemValue)}
+          >
+            {makeNumArray(31).map((item, index) => (
+              <Picker.Item
+                key={index}
+                style={styles.pickerItem}
+                label={putZero(index + 1)}
+                value={parseInt(putZero(index + 1))}
+                mode={"dropdown"}
+              />
+            ))}
+          </Picker>
+        </View>
+        <Text style={styles.bar}>{`/`}</Text>
+        <View style={pickerContainer}>
+          <Picker
+            style={styles.monthAndDayPicker}
+            selectedValue={selectedMonth}
+            onValueChange={(itemValue, itemIndex) =>
+              setSelectedMonth(itemValue)
+            }
+          >
+            {makeNumArray(12).map((item, index) => (
               <Picker.Item
                 style={styles.pickerItem}
                 key={index}
-                label={value.toString()}
-                value={value}
-                mode={"dropdown"}
+                label={putZero(index + 1)}
+                value={parseInt(putZero(index + 1))}
+                mode={Picker.MODE_DROPDOWN}
               />
-            );
-          })}
-        </Picker>
+            ))}
+          </Picker>
+        </View>
+        <Text style={styles.bar}>{`/`}</Text>
+        <View style={pickerContainer}>
+          <Picker
+            style={styles.picker}
+            selectedValue={selectedYear}
+            onValueChange={(itemValue, itemIndex) => setSelectedYear(itemValue)}
+          >
+            {makeNumArray(300).map((item, index) => {
+              let value = new Date().getFullYear() - 125 + index + 1;
+              return (
+                <Picker.Item
+                  style={styles.pickerItem}
+                  key={index}
+                  label={value.toString()}
+                  value={value}
+                  mode={"dropdown"}
+                />
+              );
+            })}
+          </Picker>
+        </View>
       </View>
     </View>
   );

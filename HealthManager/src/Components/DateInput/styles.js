@@ -1,7 +1,15 @@
 ﻿import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
+  label: {
+    fontFamily: "Roboto_100Thin",
+    fontSize: 24,
+    color: "#212f47",
+    marginLeft: 10,
+    marginBottom: 10,
+  },
+
+  pickerRow: {
     flexDirection: "row",
   },
 
@@ -22,11 +30,11 @@ const styles = StyleSheet.create({
   },
 
   monthAndDayPicker: {
-    width: 93,
+    width: 83,
   },
 
   picker: {
-    width: 103,
+    width: 102,
     // height: 111,
   },
 
