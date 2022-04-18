@@ -3,6 +3,7 @@ import {Text, TextInput, View, Pressable, Keyboard} from "react-native";
 import { ReturnArrow } from '../../Components/ReturnArrow/';
 import style from './style';
 import { LargeButton } from '../../Components/Button';
+import SpecialtyInput from '../../Components/SpecialtyInput';
 
 export default function CadastrarConsulta(){
 
@@ -24,6 +25,7 @@ export default function CadastrarConsulta(){
                 <Text style={style.formLabel}>Hora</Text>
 
                 <Text style={style.formLabel}>Especialidade</Text>
+                <SpecialtyInput/>
                 
                 <Text style={style.formLabel}>Endereço</Text>
                 <TextInput

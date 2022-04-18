@@ -3,6 +3,7 @@ import {Text, TextInput, View, Pressable, Keyboard, StyleSheet} from "react-nati
 import {Telefone} from '../../Components/Telefone/telefone';
 import { ReturnArrow } from '../../Components/ReturnArrow/';
 import { LargeButton } from '../../Components/Button';
+import SpecialtyInput from '../../Components/SpecialtyInput';
 
 export default function CadastrarMedico(){
     const [name, setName] = useState(null)
@@ -46,7 +47,7 @@ export default function CadastrarMedico(){
                 <Telefone/>
 
                 <Text style={style.formLabel}>Especialidade</Text>
-
+                <SpecialtyInput/>
                 
                 <Text style={style.formLabel}>Endereço</Text>
                 <TextInput
