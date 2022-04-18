@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import AppLoading from "expo-app-loading";
 import { StyleSheet, Text, View } from "react-native";
 import {
   useFonts,
