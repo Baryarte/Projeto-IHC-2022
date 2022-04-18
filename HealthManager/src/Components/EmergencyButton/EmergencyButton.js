@@ -3,9 +3,9 @@ import { Text, View, TouchableOpacity } from "react-native";
 import EmergencyIcon from "../../assets/icons/emergency.svg";
 import styles from "./styles";
 
-export default function EmergencyButton({ onPress }) {
+export default function EmergencyButton({ onPress, containerStyle }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.4}
