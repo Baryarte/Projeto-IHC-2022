@@ -27,14 +27,15 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto_400Regular",
     fontSize: 28,
     top: 8,
+    marginHorizontal: 1,
   },
 
   monthAndDayPicker: {
-    width: 83,
+    width: 84,
   },
 
   picker: {
-    width: 102,
+    width: 103,
     // height: 111,
   },
 

@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto_100Thin",
     fontSize: 24,
     color: "#212f47",
-    marginLeft: 10,
+    marginLeft: 12,
     marginBottom: 10,
   },
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
 
   picker: {
-    width: 93,
+    width: 113,
     height: 65,
   },
 

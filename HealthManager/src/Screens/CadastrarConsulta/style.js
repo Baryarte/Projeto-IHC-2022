@@ -4,7 +4,18 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f1f5f9",
+    paddingHorizontal: 40,
   },
+  dateInputContainer: {
+    alignSelf: "center",
+  },
+
+  hourInputContainer: {
+    marginTop: 48,
+    marginBottom: 52,
+    marginLeft: 10,
+  },
+
   boxTitle: {
     justifyContent: "center",
     paddingLeft: 40,
@@ -25,7 +36,7 @@ const style = StyleSheet.create({
     fontFamily: "Roboto_100Thin",
     color: "#212F47",
     fontSize: 24,
-    paddingLeft: 60,
+    paddingLeft: 25,
     fontWeight: "100",
     paddingTop: 20,
   },

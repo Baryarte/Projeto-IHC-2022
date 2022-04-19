@@ -5,8 +5,9 @@ import styles from "./styles";
 
 // Create Doctor Specialty Picker component
 
-export default function SpecialtyInput({ label }) {
-  const [selectedSpecialty, setSelectedSpecialty] = useState(null);
+export default function SpecialtyInput({ label, onValueChange }) {
+  const [selectedSpecialty, setSelectedSpecialty] =
+    useState("Escolha uma opção");
 
   const especialidades = [
     "Escolha uma opção",
@@ -18,6 +19,11 @@ export default function SpecialtyInput({ label }) {
     "Outro",
   ];
 
+  const onChange = (itemValue, itemIndex) => {
+    setSelectedSpecialty(itemValue);
+    onValueChange(itemValue);
+  };
+
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
@@ -28,9 +34,7 @@ export default function SpecialtyInput({ label }) {
           itemStyle={styles.pickerItem}
           // dropdownIconColor={styles.pickerArrow}
           selectedValue={selectedSpecialty}
-          onValueChange={(itemValue, itemIndex) =>
-            setSelectedSpecialty(itemValue)
-          }
+          onValueChange={onChange}
         >
           {especialidades.map((item, index) => (
             <Picker.Item

@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
+import "./src/config/firebase";
 import { StyleSheet, Text, View } from "react-native";
 import CadastrarConsulta from "./src/Screens/CadastrarConsulta/index";
 import {
