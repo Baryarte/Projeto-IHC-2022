@@ -32,6 +32,10 @@ export default function AcionaEmergencia(){
         segundos = 10
     }
 
+    function clicaBotao2() {
+        segundos = 99999999
+    }
+
     return(
         <View>
             <ReturnArrow/>
@@ -49,7 +53,7 @@ export default function AcionaEmergencia(){
                 <Text style={style.warningText2}>Enviando mensagem em 10 segundos...</Text>
 
                 <View style={style.button}>
-                    <SmallButton text={"Cancelar"}
+                    <SmallButton text={"Cancelar"} onPress={() => clicaBotao2()}
                     />
                 </View>
             </View>
