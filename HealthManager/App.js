@@ -7,7 +7,6 @@ import CadastrarMedico from './src/Screens/CadastrarMedico/';
 import CadastrarRemedio from './src/Screens/CadastrarRemedio/';
 import AcionaEmergencia from './src/Screens/AcionaEmergencia/';
 import CadastrarConsulta from './src/Screens/CadastrarConsulta/';
-import ConfirmaEmergencia from './src/Screens/ConfirmaEmergencia';
 
 export default function App() {
   return (
@@ -17,14 +16,15 @@ export default function App() {
       <LargeButton text='Cadastrar'/>
       <SmallButton text='Não'/>
       <Form/>
-      <Login/>*/}
+      <Login/>
       <SignUp/>
       <Footer/>
       <CadastrarMedico/>
       <CadastrarRemedio/>
-      <AcionaEmergencia/>
       <CadastrarConsulta/>
-      <ConfirmaEmergencia/>
+      <ConfirmaEmergencia/>*/}
+      <AcionaEmergencia/>
+      
     </View>
     </ScrollView>
   );
