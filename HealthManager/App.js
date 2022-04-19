@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
 import { StyleSheet, Text, View } from "react-native";
+import CadastrarConsulta from "./src/Screens/CadastrarConsulta/index";
 import {
   useFonts,
   Roboto_100Thin,
@@ -38,8 +39,7 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
+        <CadastrarConsulta />
       </View>
     );
   }
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
 });

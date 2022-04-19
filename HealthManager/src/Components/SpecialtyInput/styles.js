@@ -2,11 +2,11 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   label: {
-    //fontFamily: "Roboto_100Thin",
+    fontFamily: "Roboto_100Thin",
     fontSize: 24,
     color: "#212f47",
     marginLeft: 10,
-    marginBottom: 10,
+    left: 50,
   },
 
   pickerRow: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 
   monthAndDayPicker: {
-    direction: 'rtl',
+    direction: "rtl",
     width: 300,
   },
 
@@ -40,28 +40,27 @@ const styles = StyleSheet.create({
   },
 
   pickerItem: {
-      
+    fontFamily: "Roboto_400Regular",
     fontSize: 17,
-    //fontFamily: "Roboto_400Regular",
   },
 
   pickerArrow: {
-    direction: 'rtl',
+    direction: "rtl",
     color: "#F1F5F9",
   },
   input: {
-    height:50,
-    width:320,
+    height: 50,
+    width: 320,
     alignSelf: "center",
-    borderRadius:50,
-    borderWidth:3,
-    borderColor:"#7EA1C4",
-    backgroundColor:"#F1F5F9",
-    margin:12,
-    paddingLeft:20,
-    paddingRight:20,
-    marginBottom:30
-  },    
+    borderRadius: 50,
+    borderWidth: 3,
+    borderColor: "#7EA1C4",
+    backgroundColor: "#F1F5F9",
+    margin: 12,
+    paddingLeft: 20,
+    paddingRight: 20,
+    marginBottom: 30,
+  },
 });
 
 export default styles;
