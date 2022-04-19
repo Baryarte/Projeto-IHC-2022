@@ -42,7 +42,7 @@ export default function DateInput({ label, onChange, verifyDate = true }) {
         setIsDateWrong(true);
       }
     }
-    onChange && onChange(date);
+    onChange && onChange(date, isDateWrong);
   }, [selectedDay, selectedMonth, selectedYear]);
 
   return (
