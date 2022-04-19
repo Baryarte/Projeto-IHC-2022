@@ -7,7 +7,12 @@ import "moment/locale/pt-br";
 
 // Create Date Picker component
 
-export default function DateInput({ label, onChange, verifyDate = true }) {
+export default function DateInput({
+  label,
+  onChange,
+  verifyDate = true,
+  styleContainer,
+}) {
   moment.locale("pt-br");
 
   const [selectedDay, setSelectedDay] = useState(moment().date());
@@ -46,7 +51,7 @@ export default function DateInput({ label, onChange, verifyDate = true }) {
   }, [selectedDay, selectedMonth, selectedYear]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styleContainer]}>
       <Text style={styles.label}>{label}</Text>
       <View style={styles.pickerRow}>
         <View style={pickerContainer}>
