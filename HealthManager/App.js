@@ -3,6 +3,7 @@ import AppLoading from "expo-app-loading";
 import "./src/config/firebase";
 import { StyleSheet, Text, View } from "react-native";
 import CadastrarConsulta from "./src/Screens/CadastrarConsulta/index";
+import Menu from "./src/Screens/Menu/"
 import {
   useFonts,
   Roboto_100Thin,
@@ -40,7 +41,7 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
-        <CadastrarConsulta />
+        <Menu />
       </View>
     );
   }
