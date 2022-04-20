@@ -6,11 +6,10 @@ import styles from "./styles";
 // Create Doctor Specialty Picker component
 
 export default function SpecialtyInput({ label, onValueChange }) {
-  const [selectedSpecialty, setSelectedSpecialty] =
-    useState("Escolha uma opção");
+  const [selectedSpecialty, setSelectedSpecialty] = useState("");
 
   const especialidades = [
-    "Escolha uma opção",
+    "",
     "Cardiologista",
     "Clínico Geral",
     "Cirurgião",

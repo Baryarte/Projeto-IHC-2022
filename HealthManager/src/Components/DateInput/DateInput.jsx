@@ -44,7 +44,7 @@ export default function DateInput({
       if (date.isSameOrAfter(moment(), "day")) {
         setIsDateWrong(false);
       } else {
-        date = null;
+        date = "error";
         setIsDateWrong(true);
       }
     }

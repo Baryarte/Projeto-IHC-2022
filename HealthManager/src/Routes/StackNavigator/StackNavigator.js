@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 export default function StackNavigator() {
   return (
     <Stack.Navigator
-      initialRouteName="CadastrarConsulta"
+      initialRouteName="CadastrarRemedio"
       screenOptions={{
         // headerShadowVisible: false,
         headerShown: false,
