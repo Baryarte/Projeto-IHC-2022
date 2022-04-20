@@ -1,31 +1,91 @@
 import React, {useState} from "react"
 import {Text, View, ScrollView, Image} from "react-native"
 import styles from "./style"
-import { SmallButton } from "../../Components/Button/"
+import { HomeButton } from "../../Components/HomeButton"
 import EmergencyButton from "../../Components/EmergencyButton/EmergencyButton"
 import AddButton from "../../Components/AddButton"
+import remNorm from "../../../assets/remedio-normal.png"
+import remBran from "../../../assets/remedio-branco.png"
+import douNorm from "../../../assets/doutor-normal.png"
+import douBran from "../../../assets/doutor-branco.png"
+import conNorm from "../../../assets/consulta-normal.png"
+import conBran from "../../../assets/consulta-branco.png"
+import sauNorm from "../../../assets/saude-normal.png"
+import sauBran from "../../../assets/saude-branco.png"
+import { StatusBar } from "expo-status-bar"
 
 export default function Menu(){
 
     const [option, setOption] = useState(null)
+    const [image1, setImage1] = useState(remNorm)
+    const [image2, setImage2] = useState(douNorm)
+    const [image3, setImage3] = useState(conNorm)
+    const [image4, setImage4] = useState(sauNorm)
+    const [imageP1, setImageP1] = useState("False")
+    const [imageP2, setImageP2] = useState("False")
+    const [imageP3, setImageP3] = useState("False")
+    const [imageP4, setImageP4] = useState("False")
 
     function selectOption(opt) {
         if(option == opt) {
             setOption(null)
+            setImage1(remNorm)
+            setImage2(douNorm)
+            setImage3(conNorm)
+            setImage4(sauNorm)
+            setImageP1("False")
+            setImageP2("False")
+            setImageP3("False")
+            setImageP4("False")
         } else {
+            if(opt == 1) {
+                setImage1(remBran)
+                setImage2(douNorm)
+                setImage3(conNorm)
+                setImage4(sauNorm)
+                setImageP1("True")
+                setImageP2("False")
+                setImageP3("False")
+                setImageP4("False")
+            } else if(opt == 2) {
+                setImage1(remNorm)
+                setImage2(douBran)
+                setImage3(conNorm)
+                setImage4(sauNorm)
+                setImageP1("False")
+                setImageP2("True")
+                setImageP3("False")
+                setImageP4("False")
+            } else if(opt == 3) {
+                setImage1(remNorm)
+                setImage2(douNorm)
+                setImage3(conBran)
+                setImage4(sauNorm)
+                setImageP1("False")
+                setImageP2("False")
+                setImageP3("True")
+                setImageP4("False")
+            } else if(opt == 4) {
+                setImage1(remNorm)
+                setImage2(douNorm)
+                setImage3(conNorm)
+                setImage4(sauBran)
+                setImageP1("False")
+                setImageP2("False")
+                setImageP3("False")
+                setImageP4("True")
+            }
             setOption(opt)
         }
     }
 
     return(
         <ScrollView marginTop={60}>
-            <View style={styles.buttons}>
-                    <SmallButton text={"Remédios"} onPress={() => selectOption(1)}/>
-                    <SmallButton text={"Médicos"} onPress={() => selectOption(2)}/>
-            </View>
-            <View style={styles.buttons}>
-                    <SmallButton text={"Consultas"} onPress={() => selectOption(3)}/>
-                    <SmallButton text={"Saúde"} onPress={() => selectOption(4)}/>
+            <View style={styles.compButtons}>
+                <HomeButton text={"Remédios"} onPress={() => selectOption(1)}  image={image1} isPressed={imageP1}/>
+                <HomeButton text={"Médicos"} onPress={() => selectOption(2)} image={image2} isPressed={imageP2}/>
+                <HomeButton text={"Consultas"} onPress={() => selectOption(3)} image={image3} isPressed={imageP3}/>
+                <HomeButton text={"Saúde"} onPress={() => selectOption(4)} image={image4} isPressed={imageP4}/>
             </View>
 
             {option === 1 ?

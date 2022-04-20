@@ -1,12 +1,14 @@
 import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
-    buttons: {
-        marginBottom:20,
-        display:"flex",
-        justifyContent:"space-evenly",
-        alignItems:"center",
+    compButtons:{
+        alignContent: 'flex-start',
+        justifyContent: 'space-evenly',
+        flex: 1,
         flexDirection: "row",
+        flexWrap: 'wrap',
+        width:'100%',
+    
     },
     title: {
         fontFamily: "Roboto_400Regular",
