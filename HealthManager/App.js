@@ -1,6 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import AppLoading from "expo-app-loading";
+import { HomeButton } from "./src/Components/HomeButton"
 import { StyleSheet, Text, View } from "react-native";
+import randomImg from "./assets/download.jpg"
+
+
 import {
   useFonts,
   Roboto_100Thin,
@@ -40,12 +44,28 @@ export default function App() {
       <View style={styles.container}>
         <Text>Open up App.js to start working on your app!</Text>
         <StatusBar style="auto" />
+        <View style={styles.compButtons}>
+          <HomeButton text={"Remedios"} image={randomImg}/>
+          <HomeButton text={"Médicos"} image={randomImg}/>
+          <HomeButton text={"Consultas"} image={randomImg}/>
+          <HomeButton text={"Saúde"} image={randomImg}/>
+        </View>
+
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  compButtons:{
+    alignContent: 'flex-start',
+    justifyContent: 'space-evenly',
+    flex: 1,
+    flexDirection: "row",
+    flexWrap: 'wrap',
+    width:'100%',
+    
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
