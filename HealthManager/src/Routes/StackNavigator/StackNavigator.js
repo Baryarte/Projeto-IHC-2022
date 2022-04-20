@@ -4,6 +4,7 @@ import CadastrarConsulta from "../../Screens/CadastrarConsulta";
 import CadastrarMedico from "../../Screens/CadastrarMedico";
 import CadastrarRemedio from "../../Screens/CadastrarRemedio";
 import AcionaEmergencia from "../../Screens/AcionaEmergencia";
+import Menu from "../../Screens/Menu";
 import styles from "./styles";
 
 const Stack = createNativeStackNavigator();
@@ -11,7 +12,7 @@ const Stack = createNativeStackNavigator();
 export default function StackNavigator() {
   return (
     <Stack.Navigator
-      initialRouteName="CadastrarRemedio"
+      initialRouteName="Menu"
       screenOptions={{
         // headerShadowVisible: false,
         headerShown: false,
@@ -20,6 +21,7 @@ export default function StackNavigator() {
         headerTitleAlign: "left",
       }}
     >
+      <Stack.Screen name="Menu" component={Menu} options={{ title: "Menu" }} />
       <Stack.Screen
         name="CadastrarConsulta"
         component={CadastrarConsulta}
