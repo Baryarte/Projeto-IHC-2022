@@ -10,7 +10,8 @@ export default function AcionaEmergencia({ navigation }) {
   var segundos = 99999999;
 
   var x = setTimeout(function teste() {
-    if (timer == 1) {
+    if (timer <= 0) {
+      clearTimeout(x);
       Linking.canOpenURL("whatsapp://send?text=test")
         .then((supported) => {
           if (supported) {
@@ -27,11 +28,10 @@ export default function AcionaEmergencia({ navigation }) {
           navigation.goBack();
         });
 
-      clearTimeout(x);
-
       //   segundos = 99999999;
     } else {
       segundos = segundos - 1;
+
       setTimer((sec) => sec - 1);
     }
   }, 2000);
@@ -70,7 +70,7 @@ export default function AcionaEmergencia({ navigation }) {
         ) : (
           <View>
             <Text style={style.warningText2}>
-              Enviando mensagem em {timer} segundos...
+              Enviando mensagem em {timer < 0 ? "0" : timer} segundos...
             </Text>
 
             <View style={style.button}>
