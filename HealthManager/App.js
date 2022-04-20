@@ -3,6 +3,7 @@ import AppLoading from "expo-app-loading";
 import "./src/config/firebase";
 import { StyleSheet, Text, View } from "react-native";
 import CadastrarConsulta from "./src/Screens/CadastrarConsulta/index";
+import { NavigationContainer } from "@react-navigation/native";
 import {
   useFonts,
   Roboto_100Thin,
@@ -18,6 +19,7 @@ import {
   Roboto_900Black,
   Roboto_900Black_Italic,
 } from "@expo-google-fonts/roboto";
+import StackNavigator from "./src/Routes/StackNavigator/StackNavigator";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -40,7 +42,9 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
-        <CadastrarConsulta />
+        <NavigationContainer>
+          <StackNavigator />
+        </NavigationContainer>
       </View>
     );
   }

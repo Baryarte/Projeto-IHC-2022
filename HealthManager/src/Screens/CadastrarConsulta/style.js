@@ -4,8 +4,12 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f1f5f9",
+  },
+
+  form: {
     paddingHorizontal: 40,
   },
+
   dateInputContainer: {
     alignSelf: "center",
   },
@@ -17,9 +21,13 @@ const style = StyleSheet.create({
   },
 
   boxTitle: {
-    justifyContent: "center",
-    paddingLeft: 40,
-    paddingRight: 40,
+    // justifyContent: "center",
+    flexDirection: "row",
+    // paddingLeft: 40,
+    // paddingRight: 40,
+    paddingTop: 46,
+    // right: 37,
+    zIndex: 10,
     paddingBottom: 30,
   },
   textTitle: {
@@ -27,6 +35,8 @@ const style = StyleSheet.create({
     color: "#212F47",
     fontSize: 28,
     fontWeight: "normal",
+    top: 20,
+    marginLeft: 10,
   },
   dadosremedio: {
     flexDirection: "column",
@@ -36,7 +46,7 @@ const style = StyleSheet.create({
     fontFamily: "Roboto_100Thin",
     color: "#212F47",
     fontSize: 24,
-    paddingLeft: 25,
+    paddingLeft: 24,
     fontWeight: "100",
     paddingTop: 20,
   },
