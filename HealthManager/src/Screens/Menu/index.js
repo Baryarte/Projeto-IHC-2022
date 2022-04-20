@@ -274,8 +274,8 @@ export default function Menu({ navigation }) {
               <View style={styles.alignBar}>
                 <View style={styles.bar} />
                 <View>
-                  <Text style={styles.name}>Nome do usuário</Text>
-                  <Text style={styles.information}>E-mail do usuário</Text>
+                  <Text style={styles.name}>José</Text>
+                  <Text style={styles.information}>jose@email.com</Text>
                 </View>
               </View>
             </View>
